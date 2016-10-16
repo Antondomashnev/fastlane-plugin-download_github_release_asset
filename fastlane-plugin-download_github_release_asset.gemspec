@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = %q{antondomashnev@gmail.com}
 
   spec.summary       = %q{This action downloads a GitHub release's asset using the GitHub API and puts it in a destination path.\nIf the file has been previously downloaded, it will be overrided.}
-  # spec.homepage      = "https://github.com/<GITHUB_USERNAME>/fastlane-plugin-download_github_release_asset"
+  spec.homepage      = "https://github.com/Antondomashnev/fastlane-plugin-download_github_release_asset"
   spec.license       = "MIT"
 
   spec.files         = Dir["lib/**/*"] + %w(README.md LICENSE)

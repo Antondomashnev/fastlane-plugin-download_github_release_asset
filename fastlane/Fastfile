@@ -1,3 +1,22 @@
-lane :test do
-  download_github_release_asset
+lane :example do |options|
+  release_version = options[:release_version]
+
+  github_release = get_github_release(
+    url: ENV['PRIVATE_CONICHI_IOS_SDK_GITHUB_REPO'],
+    version: release_version,
+    api_token: ENV['CONICHI_CI_GITHUB_TOKEN']
+  )
+
+  assets = github_release["assets"]
+  selected_assets = assets.select do |asset|
+    asset["name"] == "my_asset.zip"
+  end
+
+  my_asset_json = selected_assets[0]
+  my_asset_url = my_asset_json["url"]
+  download_github_release_asset(
+    asset_url: my_asset_url,
+    destination_path: "./here/my_asset.zip",
+    api_token: "token"
+  )
 end
