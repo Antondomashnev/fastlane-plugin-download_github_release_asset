@@ -26,9 +26,9 @@ lane :example do |options|
   release_version = options[:release_version]
 
   github_release = get_github_release(
-    url: ENV['PRIVATE_CONICHI_IOS_SDK_GITHUB_REPO'],
+    url: "octocat/Hello-World",
     version: release_version,
-    api_token: ENV['CONICHI_CI_GITHUB_TOKEN']
+    api_token: "token"
   )
 
   assets = github_release["assets"]
